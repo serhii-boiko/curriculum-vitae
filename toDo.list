@@ -1,4 +1,7 @@
 1. Loading screen
+    - Big Logo
+    - Small Logo
+    - Animated Logo
 2. Grid (Mobile/Desktop)
 4. Normalize css.
 3. Menu
@@ -9,4 +12,14 @@
 6. Google analytics.
 7. Empty page;
 8. Scrolling???
-9. 404 page.
+9. 404 page. (2 way one from Server redirect to page #404 second in application)
+10. will_change ???
+11. Routing
+12. Page change animation.
+13. Contact form (Cloud function)
+14. How add css
+15. Google map
+16. Hosting with Firebase Hosting
+17. Autoprefics / minimize css / minimize HTML / minimize JS;
+18. Create project with out images (only favicon);
+
