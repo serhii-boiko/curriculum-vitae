@@ -1,0 +1,123 @@
+@import "normalize.scss/normalize";
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+
+$main_color: #2A2A2B;
+
+body {
+  background-color: $main_color;
+}
+
+
+.preloader {
+  position: fixed;
+  background: #252627;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+
+  .inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 400px;
+    max-width: 100%;
+    height: 160px;
+    text-align: center;
+
+    & > img {
+      display: block;
+      margin: 0 auto;
+    }
+
+    & > span {
+      color: #8d8d8d;
+      margin-top: 9px;
+      font-size: 9px;
+      font-family: "Open Sans", sans-serif;
+      letter-spacing: 3px;
+      margin-bottom: 30px;
+      display: block;
+    }
+  }
+
+  .progress-bar {
+    text-align: left;
+
+    span {
+      color: #fff;
+      text-align: right;
+      float: left;
+      font-size: 27px;
+      margin-bottom: 10px;
+      display: block;
+    }
+  }
+
+  .progress-bar_bg {
+    height: 1px;
+    background: #238d75;
+    overflow: hidden;
+
+    & .progress-bar_done_1 {
+      height: 1px;
+      background: #3FFED6;
+      width: 20%;
+      animation: pulse 1.5s linear infinite;
+    }
+
+  }
+}
+
+@keyframes pulse {
+  0% {
+    margin-left: -20%;
+  }
+  100% {
+    margin-left: 100%;
+  }
+}
+
+.logo-s {
+  font-size: 60px;
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+  height: 90px;
+  width: 100px;
+  margin: 0 auto;
+
+  & .logo-s__first {
+    text-align: center;
+    letter-spacing: 5px;
+    font-weight: bold;
+    width: 100%;
+    display: inline-block;
+    top: 0;
+    left: -2px;
+    color: #F6005B;
+    position: absolute;
+    height: 100%;
+  }
+
+  & .logo-s__second {
+    letter-spacing: 5px;
+    font-weight: bold;
+    display: inline-block;
+    color: #3FFED6;
+    top: 0;
+    left: 2px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+
+  & .logo-s__text {
+    position: absolute;
+    color: white;
+    font-size: 15px;
+    bottom: 10px;
+    width: 100%;
+  }
+}

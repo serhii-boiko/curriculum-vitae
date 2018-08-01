@@ -1,2 +1,2 @@
-import '@src/app/app';
-import '@src/sass/styles.main.scss';
+import '@src/index';
+import '@public/styles.main.scss';

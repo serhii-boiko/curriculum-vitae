@@ -1,5 +1,6 @@
 const path = require('path');
 const merge = require('webpack-merge');
+const webpack = require('webpack');
 const baseWebpackConfig = require('./webpack.base.js');
 
 const resolve = dir => path.join(__dirname, '..', '..', dir);
@@ -8,9 +9,23 @@ const resolve = dir => path.join(__dirname, '..', '..', dir);
 
 module.exports = merge(baseWebpackConfig, {
   mode: 'development',
+  cache: true,
+  devtool: 'eval',
+  watchOptions: {
+      poll: true
+  },
   devServer: {
     contentBase: resolve('dist'),
-    compress: true,
-    port: 9000
-  }
+    inline: true,
+    hot: true,
+    port: 3000,
+  },
+  entry: [
+      'babel-polyfill',
+      'webpack/hot/only-dev-server',
+      resolve('index.js'),
+  ],
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+  ],
 });
