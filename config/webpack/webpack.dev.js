@@ -12,18 +12,19 @@ module.exports = merge(baseWebpackConfig, {
   cache: true,
   devtool: 'eval',
   watchOptions: {
-      poll: true
+    poll: true
   },
   devServer: {
     contentBase: resolve('dist'),
     inline: true,
     hot: true,
     port: 3000,
+    historyApiFallback: true
   },
   entry: [
-      'babel-polyfill',
-      'webpack/hot/only-dev-server',
-      resolve('index.js'),
+    'babel-polyfill',
+    'webpack/hot/only-dev-server',
+    resolve('index.js'),
   ],
   plugins: [
     new webpack.HotModuleReplacementPlugin(),

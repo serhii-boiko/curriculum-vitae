@@ -13,7 +13,8 @@ module.exports = (configName) => {
   console.warn(
     `Provided environment "${configName}" was not found.
      Please use one of the following ones:
-     ${Object.keys(webpackConfigs).join(' ')}`
+     ${Object.keys(webpackConfigs)
+      .join(' ')}`
   );
   return webpackConfigs[defaultConfig];
 };

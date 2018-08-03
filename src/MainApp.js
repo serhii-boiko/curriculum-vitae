@@ -1,8 +1,12 @@
 import { hot } from 'react-hot-loader';
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import AppRoute from '@src/app';
 
 const MainApp = () => (
-  <div>1111222</div>
+  <Router>
+    <AppRoute/>
+  </Router>
 );
 
 export default hot(module)(MainApp);

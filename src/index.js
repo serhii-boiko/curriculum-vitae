@@ -5,5 +5,5 @@ import MainApp from './MainApp';
 const rootEl = document.getElementById('root');
 
 setTimeout(() => {
-  ReactDOM.render(<MainApp />, rootEl);
-}, 5000);
+  ReactDOM.render(<MainApp/>, rootEl);
+}, 1000);

@@ -1,7 +1,7 @@
-const path = require("path");
+const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 
 function resolve(dir) {
@@ -23,7 +23,7 @@ module.exports = {
   module: {
     rules: [
       {
-        enforce: "pre",
+        enforce: 'pre',
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
@@ -48,11 +48,11 @@ module.exports = {
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [{
-            loader: "css-loader"
+            loader: 'css-loader'
           }, {
             loader: 'postcss-loader',
           }, {
-            loader: "sass-loader",
+            loader: 'sass-loader',
             options: {
               includePaths: [
                 resolve('node_modules')
