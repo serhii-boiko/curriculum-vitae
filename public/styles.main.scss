@@ -1,15 +1,25 @@
-@import "normalize.scss/normalize";
+@import 'normalize.scss/normalize';
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
 
-$main_color: #2A2A2B;
+$background_color: #191919;
+$main_color1: #5bf4fe;
+$main_color2: #fe2cb5;
+$text_color: rgb(255, 255, 255);
+$color1: rgb(135, 135, 135);
+$color2: rgb(75, 75, 75);
+$color3: rgba(55, 55, 55, 0.75);
+
+html, body {
+  height: 100%;
+}
 
 body {
-  background-color: $main_color;
+  background-color: $background_color;
 }
 
 .preloader {
   position: fixed;
-  background: #252627;
+  background: $background_color;
   z-index: 2;
   height: 100%;
   width: 100%;
@@ -32,7 +42,7 @@ body {
     }
 
     & > span {
-      color: #8d8d8d;
+      color: $color1;
       margin-top: 9px;
       font-size: 9px;
       font-family: "Open Sans", sans-serif;
@@ -44,25 +54,16 @@ body {
 
   .progress-bar {
     text-align: left;
-
-    span {
-      color: #fff;
-      text-align: right;
-      float: left;
-      font-size: 27px;
-      margin-bottom: 10px;
-      display: block;
-    }
   }
 
   .progress-bar_bg {
     height: 1px;
-    background: #238d75;
+    background: darken($main_color1, 30%);
     overflow: hidden;
 
     & .progress-bar_done_1 {
       height: 1px;
-      background: #3FFED6;
+      background: $main_color1;
       width: 20%;
       animation: pulse 1.5s linear infinite;
     }
@@ -95,7 +96,7 @@ body {
     display: inline-block;
     top: 0;
     left: -2px;
-    color: #F6005B;
+    color: $main_color1;
     position: absolute;
     height: 100%;
   }
@@ -104,7 +105,7 @@ body {
     letter-spacing: 5px;
     font-weight: bold;
     display: inline-block;
-    color: #3FFED6;
+    color: $main_color2;
     top: 0;
     left: 2px;
     height: 100%;
@@ -114,7 +115,7 @@ body {
 
   & .logo-s__text {
     position: absolute;
-    color: white;
+    color: $text_color;
     font-size: 15px;
     bottom: 10px;
     width: 100%;

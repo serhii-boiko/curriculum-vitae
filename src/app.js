@@ -10,36 +10,41 @@ import Grid from '@src/grid';
 
 const routes = [
   {
+    key: 1,
     path: '/',
     exact: true,
-    component: Home
+    component: Home,
   }, {
+    key: 2,
     path: '/contact',
-    component: Contact
+    component: Contact,
   }, {
+    key: 3,
     path: '/my-work',
-    component: MyWork
+    component: MyWork,
   }, {
+    key: 4,
     path: '/skills',
-    component: Skills
+    component: Skills,
   }, {
+    key: 5,
     path: '/about',
-    component: About
+    component: About,
   },
 ];
 
 const AppRoute = () => (
   <Grid>
     <Switch>
-      {routes.map((route, index) => (
+      {routes.map(route => (
         <Route
-          key={index}
+          key={route.key}
           path={route.path}
           exact={route.exact}
           component={route.component}
         />
       ))}
-      <Route component={NotFound}/>
+      <Route component={NotFound} />
     </Switch>
   </Grid>
 );

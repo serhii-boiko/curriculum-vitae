@@ -1,6 +1,6 @@
 {
   "env": {
-    "node": true,
+    "node": false,
     "browser": true,
     "es6": true
   },
@@ -12,5 +12,9 @@
         "config": "config/webpack/webpack.base.js"
       }
     }
+  },
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "import/no-extraneous-dependencies": 0
   }
 }
