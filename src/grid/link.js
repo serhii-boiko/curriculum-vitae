@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import StyleSheetHelper from '@src/common/StyleSheetHelper';
+import PropTypes from 'prop-types';
 
 const NavLinkStyled = styled.nav`
   display: inline-block;
@@ -53,7 +54,7 @@ const StyledLink = styled(NavLink)`
 `;
 
 
-const CustomLink = ({ children, text,  ...props }) => (
+const CustomLink = ({ children, text, ...props }) => (
   <NavLinkStyled>
     <StyledLink {...props}>
       {children}
@@ -65,5 +66,10 @@ const CustomLink = ({ children, text,  ...props }) => (
     </StyledLink>
   </NavLinkStyled>
 );
+
+CustomLink.propTypes = {
+  children: PropTypes.node.isRequired,
+  text: PropTypes.string.isRequired,
+};
 
 export default CustomLink;

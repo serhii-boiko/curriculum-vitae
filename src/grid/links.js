@@ -1,19 +1,32 @@
 import React from 'react';
 import styled from 'styled-components';
-import HomeSVG from './linksSVG/home.svg';
-import ContactSVG from './linksSVG/at.svg';
-import MyWorkSVG from './linksSVG/folders.svg';
-import SkillsSVG from './linksSVG/settings.svg';
-import UserSVG from './linksSVG/user.svg';
+import StyleSheetHelper from '@src/common/StyleSheetHelper';
+import PropTypes from 'prop-types';
+import HomeSVG from './svg/home.svg';
+import ContactSVG from './svg/at.svg';
+import MyWorkSVG from './svg/folders.svg';
+import SkillsSVG from './svg/settings.svg';
+import UserSVG from './svg/user.svg';
 import CustomLink from './link';
 
 const NavLinksStyled = styled.main`
   padding: 0;
   margin: 0;
+  
+  ${StyleSheetHelper.media.phone`
+    display: ${props => props.openedMenu ? 'block' : 'none'};
+    text-align: center;
+    background-color: #232323;
+    position: fixed;
+    left: 100%;
+    width: 100%;
+    top: 60px;
+    left: 0;
+  `}
 `;
 
-const NavLinks = () => (
-  <NavLinksStyled>
+const NavLinks = ({ openedMenu }) => (
+  <NavLinksStyled openedMenu={openedMenu}>
     <CustomLink to="/" text="HOME" exact>
       <HomeSVG />
     </CustomLink>
@@ -31,5 +44,9 @@ const NavLinks = () => (
     </CustomLink>
   </NavLinksStyled>
 );
+
+NavLinks.propTypes = {
+  openedMenu: PropTypes.bool.isRequired,
+};
 
 export default NavLinks;

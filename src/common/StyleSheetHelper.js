@@ -18,7 +18,7 @@ const media = Object.keys(sizes).reduce((accumulator, label) => {
 }, {});
 
 const color = {
-  Background: '#191919',
+  Background: '#0a0a0a',
   Menu: '#1e1e1e',
   Font: '#e6e6e6',
   Main1: '#fe2cb5',

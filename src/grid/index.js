@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import NavSocial from '@src/grid/social';
 import NavLogo from '@src/grid/logo';
 import NavLinks from '@src/grid/links';
+import MobileMenu from '@src/grid/mobile-menu';
 
 const MainContainer = styled.div`
   display: grid;
@@ -46,20 +47,36 @@ const ContentContainer = styled.div`
   grid-area: content;
 `;
 
-const Grid = ({ children }) => (
-  <MainContainer>
-    <HeaderContainer>
-      <Header>
-        <NavLogo />
-        <NavLinks />
-        <NavSocial />
-      </Header>
-    </HeaderContainer>
-    <ContentContainer>
-      {children}
-    </ContentContainer>
-  </MainContainer>
-);
+class Grid extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { openedMenu: false };
+  }
+
+  toggleMenu = () => {
+    this.setState(prevState => ({ openedMenu: !prevState.openedMenu }));
+  };
+
+  render() {
+    const { children } = this.props;
+    const { openedMenu } = this.state;
+    return (
+      <MainContainer>
+        <HeaderContainer>
+          <Header>
+            <NavLogo />
+            <NavLinks openedMenu={openedMenu} />
+            <NavSocial />
+            <MobileMenu toggleMenu={this.toggleMenu} />
+          </Header>
+        </HeaderContainer>
+        <ContentContainer>
+          {children}
+        </ContentContainer>
+      </MainContainer>
+    );
+  }
+}
 
 Grid.propTypes = {
   children: PropTypes.node.isRequired,
