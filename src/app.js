@@ -7,6 +7,7 @@ import Skills from '@src/skills';
 import About from '@src/about';
 import NotFound from '@src/404';
 import Grid from '@src/grid';
+import PageTransition from "react-router-page-transition";
 
 const routes = [
   {
@@ -33,19 +34,21 @@ const routes = [
   },
 ];
 
-const AppRoute = () => (
+const AppRoute = ({ location }) => (
   <Grid>
-    <Switch>
-      {routes.map(route => (
-        <Route
-          key={route.key}
-          path={route.path}
-          exact={route.exact}
-          component={route.component}
-        />
-      ))}
-      <Route component={NotFound} />
-    </Switch>
+    <PageTransition>
+      <Switch location={location}>
+        {routes.map(route => (
+          <Route
+            key={route.key}
+            path={route.path}
+            exact={route.exact}
+            component={route.component}
+          />
+        ))}
+        <Route component={NotFound} />
+      </Switch>
+    </PageTransition>
   </Grid>
 );
 

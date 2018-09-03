@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Contact = () => (
-  <h2>
+  <h2 className="transition-item" style={{ backgroundColor: 'white' }}>
     Contact
   </h2>
 );
