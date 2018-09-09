@@ -1,0 +1,27 @@
+1. /login route with login form
+2. /admin route with list emails (delete)
+
+ - firebase auth
+ - firebase data
+
+ - redux???
+
+3. Animation page changing
+4. Design each page:
+
+- about
+- contact
+- home
+- mywork
+- skills
+- 404
+
+5. Tests??
+
+6. Database rules
+7. Cloud function
+
+8. styles optimization
+9. Images
+
+

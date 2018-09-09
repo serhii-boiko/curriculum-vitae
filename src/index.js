@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MainApp from './MainApp';
+import Main from './main';
 
 const rootEl = document.getElementById('root');
 
 setTimeout(() => {
-  ReactDOM.render(<MainApp />, rootEl);
+  ReactDOM.render(<Main />, rootEl);
 }, 1000);

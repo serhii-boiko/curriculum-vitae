@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import StyleSheetHelper from '@src/common/StyleSheetHelper';
 import PropTypes from 'prop-types';
-import NavSocial from '@src/grid/social';
-import NavLogo from '@src/grid/logo';
-import NavLinks from '@src/grid/links';
-import MobileMenu from '@src/grid/mobile-menu';
+import NavSocial from '@src/components/grid/social';
+import NavLogo from '@src/components/grid/logo';
+import NavLinks from '@src/components/grid/links';
+import MobileMenu from '@src/components/grid/mobile-menu';
 
 const MainContainer = styled.div`
   display: grid;

@@ -10,8 +10,7 @@
     "clean": "rimraf dist/*",
     "build": "yarn clean && webpack --env production",
     "start": "webpack-dev-server --env development --open",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "predeploy": "npm run build"
   },
   "devDependencies": {
     "autoprefixer": "^9.0.1",
@@ -54,6 +53,7 @@
     "aphrodite": "^2.2.2",
     "axios": "^0.18.0",
     "eslint": "^5.3.0",
+    "firebase": "^5.4.2",
     "gh-pages": "^1.2.0",
     "history": "^4.7.2",
     "install": "^0.12.1",
@@ -63,10 +63,15 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-hot-loader": "^4.3.4",
+    "react-redux": "^5.0.7",
     "react-route": "^1.0.3",
     "react-router-dom": "^4.3.1",
     "react-router-page-transition": "^3.1.0",
+    "react-router-redux": "^4.0.8",
     "react-router-transition": "^1.2.1",
+    "redux": "^4.0.0",
+    "redux-devtools-extension": "^2.13.5",
+    "redux-logger": "^3.0.6",
     "styled-components": "^3.4.5"
   }
 }
