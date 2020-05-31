@@ -1,20 +1,23 @@
 {
   "env": {
-    "node": false,
+    "node": true,
     "browser": true,
     "es6": true
   },
+  "extends": ["eslint:recommended", "plugin:react/recommended", "prettier", "prettier/react"],
+  "plugins": ["prettier"],
   "parser": "babel-eslint",
-  "extends": "airbnb",
+  "rules": {
+    "prettier/prettier": "error"
+  },
   "settings": {
+    "react": {
+      "version": "detect"
+    },
     "import/resolver": {
       "webpack": {
-        "config": "config/webpack/webpack.base.js"
+        "config": "./config/webpack/webpack.base.js"
       }
     }
-  },
-  "rules": {
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "import/no-extraneous-dependencies": 0
   }
 }
