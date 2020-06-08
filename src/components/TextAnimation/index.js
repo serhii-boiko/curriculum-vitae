@@ -1,61 +1,7 @@
-import React, { cloneElement, useState } from 'react';
+import React, { cloneElement } from 'react';
 import deepMap from '@src/common/deepMap';
-import styled, { css } from 'styled-components';
-
-const Span = styled.span`
-  display: inline-block;
-  animation-name: ${({ animated, mainAnimation }) =>
-    animated.main
-      ? css`
-          ${mainAnimation}
-        `
-      : ''};
-  animation-delay: ${({ position }) => `${100 * position}ms`};
-  animation-duration: 1000ms;
-  animation-iteration-count: 1;
-  animation-fill-mode: both;
-
-  ${({ animated, hoverAnimation }) =>
-    animated.hover &&
-    hoverAnimation &&
-    css`
-      animation-name: ${hoverAnimation};
-      animation-duration: 1000ms;
-      animation-iteration-count: 1;
-      animation-fill-mode: both;
-      animation-delay: 0ms;
-    `}
-
-  &:hover {
-    color: #08fdd8;
-  }
-`;
-
-const LatterAnimation = ({ position, children, mainAnimation, hoverAnimation }) => {
-  const [animation, setAnimation] = useState({
-    processing: false,
-    main: true,
-    hover: false,
-  });
-
-  return (
-    <Span
-      mainAnimation={mainAnimation}
-      hoverAnimation={hoverAnimation}
-      position={position}
-      onMouseEnter={() => {
-        setAnimation((state) => ({ ...state, processing: true, hover: true }));
-      }}
-      animated={animation}
-      onAnimationEnd={(e) => {
-        e.stopPropagation();
-        setAnimation((state) => ({ ...state, processing: false, main: false, hover: false }));
-      }}
-    >
-      {children}
-    </Span>
-  );
-};
+import LatterAnimation from './LetterAnimation';
+import PropTypes from 'prop-types';
 
 const TextAnimation = ({ children, mainAnimation, hoverAnimation }) => {
   let position = 0;
@@ -94,10 +40,22 @@ const TextAnimation = ({ children, mainAnimation, hoverAnimation }) => {
             children: textLoop(message),
           });
         }
-        return child;
+
+        const p = position + 1;
+        position += 1;
+        return cloneElement(child, {
+          ...child.props,
+          position: p,
+        });
       })}
     </div>
   );
+};
+
+TextAnimation.propTypes = {
+  children: PropTypes.element,
+  mainAnimation: PropTypes.object,
+  hoverAnimation: PropTypes.object,
 };
 
 export default TextAnimation;

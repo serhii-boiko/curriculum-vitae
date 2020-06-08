@@ -7,8 +7,6 @@ const Slider = ({ step, animationCallback, fromPositionLoading, toPositionLoadin
   const [loadingShow, setLoadingShow] = useState(false);
 
   const pageAnimationEnd = () => {
-    console.log('pageAnimationEnd');
-
     if (step === 'ONE') {
       setLoadingShow(true);
     } else if (step === 'TWO') {
@@ -17,7 +15,6 @@ const Slider = ({ step, animationCallback, fromPositionLoading, toPositionLoadin
   };
 
   const loadingAnimationEnd = () => {
-    console.log('loadingAnimationEnd');
     animationCallback && animationCallback();
     setLoadingShow(false);
   };

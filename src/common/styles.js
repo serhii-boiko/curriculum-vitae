@@ -128,3 +128,26 @@ export const ScaleTextShowAnimation = keyframes`
     transform: scale3d(1, 1, 1);
   }
 `;
+
+export const glitchEffect = keyframes`
+  0% {
+    left: -2px;
+    top: -2px;
+  }
+  25% {
+    left: 2px;
+    top: 0;
+  }
+  50% {
+    left: -1px;
+    top: 2px;
+  }
+  75% {
+    left: 1px;
+    top: -1px;
+  }
+  100% {
+    left: 0;
+    top: -2px;
+  }
+`;

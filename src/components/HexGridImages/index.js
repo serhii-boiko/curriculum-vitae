@@ -1,95 +1,62 @@
 import React from 'react';
-import styled from 'styled-components';
-import './css.css';
-import { media } from '@src/common/styles';
 
-const HexGrid = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  width: 90%;
-  overflow: hidden;
-  font-family: 'Raleway', sans-serif;
-  font-size: 15px;
-  list-style-type: none;
+import bender from '@src/images/bender.jpg';
+import rick from '@src/images/rick.jpg';
+import franch from '@src/images/franch.webp';
+import starwars from '@src/images/starwars.webp';
+import masseffect from '@src/images/masseffect.jpg';
+import rammstein from '@src/images/rammstein.jpg';
+import js from '@src/images/js.jpg';
+import brain from '@src/images/brain.jpg';
+import twins from '@src/images/twins.webp';
+import doom from '@src/images/doom.jpg';
+import ukraine from '@src/images/ukraine.jpg';
+import tora from '@src/images/tora.jpg';
+import science from '@src/images/science.png';
+import bbt from '@src/images/bbt.png';
+import I from '@src/images/I.png';
+import scy from '@src/images/scy.jpg';
+import yorki from '@src/images/yorki.jpg';
+import wedding from '@src/images/wedding.jpeg';
+import pool from '@src/images/pool.jpg';
+import bike from '@src/images/bike.jpg';
+import flat from '@src/images/flat.jpg';
+import citroen from '@src/images/citroen.jpg';
 
-  padding-bottom: 4.4%;
-`;
+import { Hex, Images, HexGrid, HexIn, HexLink } from './styles';
 
-const Hex = styled.li`
-  position: relative;
-  visibility: hidden;
-  outline: 1px solid transparent;
-
-  width: 20%;
-
-  &::after {
-    content: '';
-    display: block;
-    padding-bottom: 86.602%;
-  }
-
-  &:nth-child(9n + 1) {
-    margin-left: 10%;
-  }
-`;
-
-const HexIn = styled.div`
-  position: absolute;
-  width: 96%;
-  padding-bottom: 110.851%;
-  margin: 0 2%;
-  overflow: hidden;
-  visibility: hidden;
-  outline: 1px solid transparent;
-  transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
-
-  & * {
-    position: absolute;
-    visibility: visible;
-    outline: 1px solid transparent;
-  }
-`;
-
-const HexLink = styled.a`
-  opacity: 0.5;
-  display: block;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  color: #fff;
-  overflow: hidden;
-  transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
-  transition: all 500ms linear;
-
-  &:hover {
-    opacity: 1;
-  }
-`;
-
-const Images = styled.div`
-  left: -100%;
-  right: -100%;
-  width: auto;
-  height: 100%;
-  margin: 0 auto;
-  z-index: 10;
-  transform: rotate3d(0, 0, 0, 0deg);
-`;
-
-const generateColor = () => {
-  var hex = Math.floor(Math.random() * 0xffffff);
-  return '#' + ('000000' + hex.toString(16)).substr(-6);
-};
-
-const colors = [...Array(23).keys()].slice(1).map(generateColor);
+const images = [
+  js,
+  masseffect,
+  brain,
+  bender,
+  rammstein,
+  tora,
+  citroen,
+  wedding,
+  bbt,
+  ukraine,
+  twins,
+  pool,
+  bike,
+  doom,
+  science,
+  yorki,
+  flat,
+  scy,
+  starwars,
+  rick,
+  I,
+  franch,
+];
 
 const HexGridImages = () => (
   <HexGrid>
-    {colors.map((color) => (
-      <Hex key={color}>
+    {images.map((image) => (
+      <Hex key={image}>
         <HexIn>
           <HexLink>
-            <Images style={{ backgroundColor: `${color}` }} />
+            <Images src={image} />
           </HexLink>
         </HexIn>
       </Hex>

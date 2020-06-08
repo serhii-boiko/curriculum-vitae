@@ -66,7 +66,7 @@ module.exports = {
         use: ['@svgr/webpack'],
       },
       {
-        test: /\.(png|jpg|gif|mp4|ogg|woff|woff2|ttf|eot|ico|otf)$/,
+        test: /\.(png|jpg|jpeg|gif|webp|mp4|ogg|woff|woff2|ttf|eot|ico|otf)$/,
         loader: 'file-loader',
         options: {
           name: '[name].[hash].[ext]',

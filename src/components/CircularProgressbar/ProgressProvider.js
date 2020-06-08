@@ -26,7 +26,6 @@ const ProgressProvider = ({ valueStart, valueEnd, children }) => {
   //   cancelAnimationFrame(requestRef.current);
   // }
 
-
   return children(Math.round(valueEnd));
 };
 
