@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@react-google-maps/api": "^2.0.0-alpha",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "connected-react-router": "^6.7.0",
     "history": "^4.10.1",
     "normalize.css": "^8.0.1",
