@@ -3,7 +3,13 @@ const baseWebpackConfig = require('./webpack.base.js');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const { resolve } = require('./utils')
+const { resolve, publicUrlOrPath } = require('./utils');
+
+console.log(publicUrlOrPath());
+console.log(publicUrlOrPath());
+console.log(publicUrlOrPath());
+console.log(publicUrlOrPath());
+console.log(publicUrlOrPath());
 
 module.exports = merge(baseWebpackConfig, {
   mode: 'production',
@@ -14,7 +20,7 @@ module.exports = merge(baseWebpackConfig, {
   output: {
     path: resolve('./dist/assets'),
     filename: '[name].[contenthash].bundle.js',
-    publicPath: '/assets/',
+    publicPath: publicUrlOrPath(),
     chunkFilename: 'chunksJS/[id].[name].[contenthash].chunk.js',
   },
   module: {
