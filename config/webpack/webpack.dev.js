@@ -1,9 +1,7 @@
-const path = require('path');
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const webpack = require('webpack');
 const baseWebpackConfig = require('./webpack.base.js');
-
-const resolve = dir => path.join(__dirname, '..', '..', dir);
+const { resolve } = require('./utils');
 
 module.exports = merge(baseWebpackConfig, {
   mode: 'development',
@@ -49,26 +47,54 @@ module.exports = merge(baseWebpackConfig, {
         include: /node_modules/
       },
       {
-        test: /\.css$/,
+        test: /^.((?!cssmodule).)*\.css$/,
         use: [
-          'style-loader',
-          'css-loader'
-        ]
-      },
-      {
-        test: /\.s[ac]ss$/i,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader',
+          { loader: 'style-loader' },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              sourceMap: true,
+            },
+          },
         ],
       },
       {
-        test: /\.less$/,
+        test: /^.((?!cssmodule).)*\.(sass|scss)$/,
         use: [
-          'style-loader',
-          'css-loader',
-          'less-loader',
+          { loader: 'style-loader' },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              sourceMap: true,
+            },
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+        ],
+      },
+      {
+        test: /^.((?!cssmodule).)*\.less$/,
+        use: [
+          { loader: 'style-loader' },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              sourceMap: true,
+            },
+          },
+          {
+            loader: 'less-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
         ],
       },
     ],

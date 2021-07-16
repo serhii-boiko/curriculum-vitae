@@ -71,7 +71,7 @@ function animation(props) {
 export const LoadingAnimation = styled.div`
   animation-name: ${animation};
   animation-iteration-count: 1;
-  animation-duration: 2s;
+  animation-duration: 1.5s;
   height: 100%;
 `;
 

@@ -2,7 +2,7 @@ import { hot } from 'react-hot-loader';
 
 import 'normalize.css';
 
-import { BrowserRouter, Route } from 'react-router-dom';
+import { HashRouter, Route } from 'react-router-dom';
 import React from 'react';
 import Contact from '@src/components/Contact';
 import Home from '@src/components/Home';
@@ -44,7 +44,7 @@ const routes = [
 ];
 
 const Main = () => (
-  <BrowserRouter>
+  <HashRouter>
     <Grid>
       <SwitchWithSlide>
         {routes.map((route) => (
@@ -58,7 +58,7 @@ const Main = () => (
         <Route component={particlesHOC(NotFound)} />
       </SwitchWithSlide>
     </Grid>
-  </BrowserRouter>
+  </HashRouter>
 );
 
 export default hot(module)(Main);

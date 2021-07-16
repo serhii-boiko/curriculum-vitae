@@ -115,7 +115,7 @@ const EventsBar = ({
 
   useEffect(() => {
     document.body.addEventListener('keydown', handleKeydown);
-    return function() {
+    return function () {
       document.body.removeEventListener('keydown', handleKeydown);
     };
   }, []);

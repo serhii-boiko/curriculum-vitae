@@ -21,26 +21,35 @@ function getSizeFromBreakpoint(breakpointValue, breakpoints = breakpoints) {
   }
 }
 
-const lessThan = (breakpoint) => (...args) => css`
-  @media (max-width: ${getSizeFromBreakpoint(breakpoint, breakpoints)}) {
-    ${css(...args)}
-  }
-`;
+const lessThan =
+  (breakpoint) =>
+  (...args) =>
+    css`
+      @media (max-width: ${getSizeFromBreakpoint(breakpoint, breakpoints)}) {
+        ${css(...args)}
+      }
+    `;
 
-const greaterThan = (breakpoint) => (...args) => css`
-  @media (min-width: ${getSizeFromBreakpoint(breakpoint, breakpoints)}) {
-    ${css(...args)}
-  }
-`;
+const greaterThan =
+  (breakpoint) =>
+  (...args) =>
+    css`
+      @media (min-width: ${getSizeFromBreakpoint(breakpoint, breakpoints)}) {
+        ${css(...args)}
+      }
+    `;
 
-const between = (firstBreakpoint, secondBreakpoint) => (...args) => css`
-  @media (min-width: ${getSizeFromBreakpoint(
-      firstBreakpoint,
-      breakpoints
-    )}) and (max-width: ${getSizeFromBreakpoint(secondBreakpoint, breakpoints)}) {
-    ${css(...args)}
-  }
-`;
+const between =
+  (firstBreakpoint, secondBreakpoint) =>
+  (...args) =>
+    css`
+      @media (min-width: ${getSizeFromBreakpoint(
+          firstBreakpoint,
+          breakpoints
+        )}) and (max-width: ${getSizeFromBreakpoint(secondBreakpoint, breakpoints)}) {
+        ${css(...args)}
+      }
+    `;
 
 export const color = {
   Background: '#0a0a0a',
@@ -59,7 +68,7 @@ export const media = {
 };
 
 export const PageTitle = styled.div`
-  font-family: 'Coolvetica-Regular', sans-serif;
+  font-family: Coolvetica-Regular, sans-serif;
   font-size: 60px;
   color: #08fdd8;
   line-height: 50px;
